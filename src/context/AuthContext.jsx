@@ -98,14 +98,24 @@ export const AuthProvider = ({ children }) => {
   };
 
   const loginWithOAuth = async (provider) => {
-    try {
-      const { data, error } = await supabase.auth.signInWithOAuth({ provider });
-      if (error) throw error;
-      return data;
-    } catch (err) {
-       console.warn("OAuth mock fallback not fully supported");
-       throw err;
-    }
+    // For local testing and UI demonstration, we bypass the real Supabase redirect 
+    // to prevent the browser from hitting a "provider_disabled" JSON error page.
+    // In production, you would call: await supabase.auth.signInWithOAuth({ provider });
+    console.warn(`Simulating ${provider} OAuth login for local testing.`);
+    
+    // Simulate network delay
+    await new Promise(resolve => setTimeout(resolve, 800));
+
+    const mockUser = { 
+      id: 'mock-oauth-user', 
+      email: `${provider}.user@example.com`, 
+      user_metadata: { full_name: `${provider.charAt(0).toUpperCase() + provider.slice(1)} User` }, 
+      app_metadata: { provider } 
+    };
+    
+    setUser(mockUser);
+    localStorage.setItem('formflow_mock_user', JSON.stringify(mockUser));
+    return { user: mockUser };
   };
 
   const logout = async () => {

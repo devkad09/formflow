@@ -678,3 +678,35 @@
 .btn-delete-field:hover {
   background: #fee2e2;
 }
+
+/* Responsiveness for Builder */
+@media (max-width: 1024px) {
+  .builder-columns {
+    grid-template-columns: 200px 1fr 240px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form.builder-main-wrapper {
+    padding: 20px;
+  }
+  .builder-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .builder-settings-bar {
+    flex-wrap: wrap;
+  }
+  .builder-columns {
+    display: flex;
+    flex-direction: column;
+  }
+  .b-col-left, .b-col-right {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+  }
+}

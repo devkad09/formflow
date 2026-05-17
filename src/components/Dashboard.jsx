@@ -351,7 +351,7 @@ const Dashboard = () => {
                         <h3>Integrations & Workflows</h3>
                         <p style={{marginTop: '8px', color: '#6b7280', marginBottom: '24px'}}>Connect your form to your favorite tools. Every submission can trigger an action instantly.</p>
                         
-                        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px'}}>
+                        <div className="integrations-grid">
                           <div style={{border: '1px solid #e5e7eb', borderRadius: '8px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                              <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
                                <div style={{width: '40px', height: '40px', background: '#f3f4f6', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}><LinkIcon size={20} color="#10b981"/></div>

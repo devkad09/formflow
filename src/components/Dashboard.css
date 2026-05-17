@@ -1054,3 +1054,21 @@
 }
 .promo-card h4 { margin: 0; font-size: 1.1rem; font-weight: 700; color: #111827; }
 .promo-card p { margin: 0; font-size: 0.9rem; color: #6b7280; line-height: 1.5; }
+
+/* Responsive Grids & Tables */
+.integrations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.submissions-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .integrations-grid {
+    grid-template-columns: 1fr;
+  }
+}
